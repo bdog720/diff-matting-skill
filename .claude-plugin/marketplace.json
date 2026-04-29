@@ -1,0 +1,15 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "diff-matting",
+  "description": "Diff matting skill for AI transparent image generation",
+  "owner": {
+    "name": "brendonrother"
+  },
+  "plugins": [
+    {
+      "name": "diff-matting",
+      "description": "Transparent background generation for AI images using difference matting technique",
+      "source": "./"
+    }
+  ]
+}

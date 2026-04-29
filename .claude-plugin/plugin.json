@@ -1,0 +1,9 @@
+{
+  "name": "diff-matting",
+  "description": "Transparent background generation for AI images using difference matting technique",
+  "version": "1.0.0",
+  "author": {
+    "name": "brendonrother"
+  },
+  "skills": "./skills/"
+}
