@@ -168,3 +168,23 @@ Semi-transparent pixels (glass, shadow, smoke) fall between.
 **Color fringing on semi-transparent edges** — JPEG compression artifacts. Always save intermediate images as PNG.
 
 **Subject changed between renders** — model re-generated instead of editing. Use edit/inpaint/image-to-image mode, not a fresh generation.
+
+---
+
+## 💬 Feedback & Issues
+
+Found a bug or have a prompt that works particularly well? Please [open an issue](https://github.com/bdog720/diff-matting-skill/issues) on GitHub.
+
+## 🤝 Contributing
+
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for details on submitting pull requests or issues.
+
+## 📄 License
+
+Licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for details.
+
+## 💖 Support the Project
+
+If this skill saves you time, consider buying me a coffee!
+
+<a href="https://buymeacoffee.com/bdog720" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 50px !important;width: 217px !important;" ></a>
