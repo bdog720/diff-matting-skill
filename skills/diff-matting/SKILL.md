@@ -41,23 +41,15 @@ npx tsx matte.ts white-bg.png black-bg.png output.png
 
 Output is a real RGBA PNG with mathematically recovered alpha channel.
 
-## Quick Start (fal.ai)
+## Compatible Tools
 
-The canonical implementation uses **fal.ai** — FLUX for generation, FLUX Kontext for editing (purpose-built for "change only X" instructions with minimal foreground drift).
+Any model that can generate an image with a specified background colour and then edit that image to change only the background:
 
-```bash
-FAL_KEY=your_key npx tsx generate.ts "a glass perfume bottle with gold cap"
-# Outputs: white-bg.png, black-bg.png, output.png (transparent)
-```
-
-`generate.ts` in this skill directory runs the full three-step pipeline automatically. Requires `sharp`, `tsx`, `@fal-ai/client` — see the project `package.json`.
-
-## Model Requirements
-
-Any model supporting image editing with controlled background replacement:
-- **Recommended:** `fal-ai/flux-kontext/dev` or `fal-ai/flux-kontext-pro` (fal.ai) — best instruction following
-- **Also good:** Gemini 2.0 Flash edit mode, GPT-image-1 edit, SDXL inpaint
-- **Acceptable:** Any model that reliably follows strict background color prompts
+- **Nano Banana / Google Gemini** — image generation + edit mode (original technique)
+- **Midjourney** — generate on white, then Vary (Subtle) with black background prompt
+- **Stable Diffusion / SDXL** — img2img at low strength (0.2–0.3) for the edit step
+- **DALL-E / GPT-image-1** — edit endpoint
+- **Any instruction-following image editor** — the prompt matters more than the model
 
 ## Core Math
 

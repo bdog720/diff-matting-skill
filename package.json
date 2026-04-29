@@ -4,11 +4,9 @@
   "description": "Transparent background extraction for AI-generated images via difference matting",
   "type": "module",
   "scripts": {
-    "generate": "tsx skills/diff-matting/generate.ts",
     "matte": "tsx skills/diff-matting/matte.ts"
   },
   "dependencies": {
-    "@fal-ai/client": "^1.0.0",
     "sharp": "^0.33.0"
   },
   "devDependencies": {

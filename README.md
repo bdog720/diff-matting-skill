@@ -50,32 +50,22 @@ python3 diff_matting.py --white white-bg.png --black black-bg.png --output resul
 npm install && npx tsx skills/diff-matting/matte.ts white-bg.png black-bg.png result.png
 ```
 
-### Full automated pipeline (fal.ai)
-
-```bash
-npm install
-FAL_KEY=your_key npx tsx skills/diff-matting/generate.ts "a glass perfume bottle with gold cap"
-# → white-bg.png, black-bg.png, output.png
-```
-
-Get a fal.ai key at [fal.ai](https://fal.ai).
-
 ---
 
 ## Compatible AI Tools
 
-The technique works with any model that can edit an image to change only the background. These are tested and recommended:
+The technique works with any model that can generate an image with a specified background colour and then edit that image to change only the background.
 
-| Tool | Generation | Background edit | Notes |
-|------|-----------|----------------|-------|
-| **fal.ai — FLUX Kontext** | `fal-ai/flux/dev` | `fal-ai/flux-kontext/dev` | Best edit accuracy, canonical example in this repo |
-| **Google Gemini** (image gen) | Gemini 2.0 Flash | Gemini 2.0 Flash (edit mode) | Original technique from the Nano Banana Pro 2 article |
-| **OpenAI GPT-image-1** | `/v1/images/generations` | `/v1/images/edits` | Widely accessible |
-| **Stability AI** | Stable Diffusion 3 | SD3 img2img | Lower drift at strength 0.2–0.3 |
-| **Midjourney** | Any model | Vary (Subtle) + background prompt | Manual workflow only |
-| **Adobe Firefly** | Text to Image | Generative Fill | Good for product photography |
+| Tool | Notes |
+|------|-------|
+| **Nano Banana / Google Gemini** | Original technique — image generation + edit mode |
+| **Midjourney** | Generate on white, Vary (Subtle) with black background prompt |
+| **Stable Diffusion / SDXL** | img2img at low strength (0.2–0.3) for the edit step |
+| **DALL-E / GPT-image-1** | Edit endpoint |
+| **Adobe Firefly** | Generative Fill for background swap |
+| **Any instruction-following editor** | The prompts below matter more than the specific model |
 
-**Key requirement:** Use the model's **edit or image-to-image mode** for the background swap step — not re-generation. Re-generation shifts foreground pixels, creating halos in the final matte.
+**Key requirement:** Use the model's **edit or image-to-image mode** for the background swap — not a fresh re-generation. Re-generation shifts foreground pixels, creating halos in the final matte.
 
 ---
 
